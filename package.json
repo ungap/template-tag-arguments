@@ -2,11 +2,18 @@
   "name": "template-tag-arguments",
   "version": "0.0.0",
   "description": "Normalizes tagged arguments granting a unique template",
-  "main": "index.js",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "unpkg": "min.js",
   "scripts": {
-    "build": "npm run cjs && npm run clean && npm test",
+    "build": "npm run cjs && npm run clean && npm run browser && npm run min && npm run size && npm test",
     "cjs": "ascjs esm cjs",
+    "browser": "cp node_modules/@ungap/template-literal/index.js index.js && cat esm/index.js >> index.js && npm run fix",
     "clean": "sed -i.bck 's/(m => m.__esModule ? m.default : m)//' cjs/index.js && rm cjs/index.js.bck",
+    "fix": "sed -i.bck \"s/import unique from '@ungap\\/template-literal';//;s/export default //;s/function (template)/function templateTagArguments(template)/;s/\\[unique/\\[templateLiteral/\" index.js && rm index.js.bck",
+    "min": "uglifyjs index.js --support-ie8 --comments=/^!/ -c -m -o min.js",
+    "size": "cat index.js | wc -c && cat min.js | wc -c && gzip -c9 min.js | wc -c && cat min.js | brotli | wc -c",  
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "test": "istanbul cover test/index.js"
   },
   "keywords": [
