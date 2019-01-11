@@ -1,0 +1,28 @@
+{
+  "name": "template-tag-arguments",
+  "version": "0.0.0",
+  "description": "Normalizes tagged arguments granting a unique template",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run cjs && npm run clean && npm test",
+    "cjs": "ascjs esm cjs",
+    "clean": "sed -i.bck 's/(m => m.__esModule ? m.default : m)//' cjs/index.js && rm cjs/index.js.bck",
+    "test": "istanbul cover test/index.js"
+  },
+  "keywords": [
+    "template",
+    "literal",
+    "unique",
+    "arguments"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "devDependencies": {
+    "ascjs": "^2.5.1",
+    "coveralls": "^3.0.2",
+    "istanbul": "^0.4.5"
+  },
+  "dependencies": {
+    "@ungap/template-literal": "^0.1.3"
+  }
+}
