@@ -1,6 +1,6 @@
 {
   "name": "template-tag-arguments",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Normalizes tagged arguments granting a unique template",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -12,7 +12,7 @@
     "clean": "sed -i.bck 's/(m => m.__esModule ? m.default : m)//' cjs/index.js && rm cjs/index.js.bck",
     "fix": "sed -i.bck \"s/import unique from '@ungap\\/template-literal';//;s/export default //;s/function (template)/function templateTagArguments(template)/;s/\\[unique/\\[templateLiteral/\" index.js && rm index.js.bck",
     "min": "uglifyjs index.js --support-ie8 --comments=/^!/ -c -m -o min.js",
-    "size": "cat index.js | wc -c && cat min.js | wc -c && gzip -c9 min.js | wc -c && cat min.js | brotli | wc -c",  
+    "size": "cat index.js | wc -c && cat min.js | wc -c && gzip -c9 min.js | wc -c && cat min.js | brotli | wc -c",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "test": "istanbul cover test/index.js"
   },
