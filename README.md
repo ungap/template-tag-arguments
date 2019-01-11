@@ -20,7 +20,9 @@ function test(value) {
 }
 ```
 
+#### How to include
+
+  * CDN as global utility via https://unpkg.com/@ungap/template-tag-arguments
+  * CDN as ESM module via `import tta from 'https://unpkg.com/@ungap/template-tag-arguments?module'`
   * ESM via `import tta from '@ungap/template-tag-arguments'`
   * CJS via `const tta = require('@ungap/template-tag-arguments')`
-
-[Live test](https://ungap.github.io/template-tag-arguments/test/)
