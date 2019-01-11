@@ -27,7 +27,8 @@
   "devDependencies": {
     "ascjs": "^2.5.1",
     "coveralls": "^3.0.2",
-    "istanbul": "^0.4.5"
+    "istanbul": "^0.4.5",
+    "uglify-js": "^3.4.9"
   },
   "dependencies": {
     "@ungap/template-literal": "^0.1.3"
