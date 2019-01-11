@@ -1,4 +1,4 @@
 node_modules/
-coveralls/
+coverage/
 package-lock.json
 
