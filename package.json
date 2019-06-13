@@ -1,5 +1,5 @@
 {
-  "name": "template-tag-arguments",
+  "name": "@ungap/template-tag-arguments",
   "version": "0.2.0",
   "description": "Normalizes tagged arguments granting a unique template",
   "main": "cjs/index.js",
