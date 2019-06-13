@@ -1,6 +1,6 @@
 {
   "name": "template-tag-arguments",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Normalizes tagged arguments granting a unique template",
   "main": "cjs/index.js",
   "module": "esm/index.js",
