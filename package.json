@@ -31,6 +31,6 @@
     "uglify-js": "^3.4.9"
   },
   "dependencies": {
-    "@ungap/template-literal": "^0.4.0"
+    "@ungap/template-literal": "^0.4.1"
   }
 }
