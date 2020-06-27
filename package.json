@@ -11,7 +11,7 @@
     "browser": "cp node_modules/@ungap/template-literal/index.js index.js && cat esm/index.js >> index.js && npm run fix",
     "clean": "sed -i.bck 's/(m => m.__esModule ? m.default : m)//' cjs/index.js && rm cjs/index.js.bck",
     "fix": "sed -i.bck \"s/import unique from '@ungap\\/template-literal';//;s/export default //;s/function (template)/function templateTagArguments(template)/;s/\\[unique/\\[templateLiteral/\" index.js && rm index.js.bck",
-    "min": "uglifyjs index.js --support-ie8 --comments=/^!/ -c -m -o min.js",
+    "min": "uglifyjs index.js -c -m -o min.js",
     "size": "cat index.js | wc -c && cat min.js | wc -c && gzip -c9 min.js | wc -c && cat min.js | brotli | wc -c",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "test": "nyc node test/index.js"
@@ -25,13 +25,13 @@
   "author": "Andrea Giammarchi",
   "license": "ISC",
   "devDependencies": {
-    "ascjs": "^4.0.0",
+    "ascjs": "^4.0.1",
     "coveralls": "^3.1.0",
-    "nyc": "^15.0.1",
-    "uglify-js": "^3.9.1"
+    "nyc": "^15.1.0",
+    "uglify-js": "^3.10.0"
   },
   "dependencies": {
-    "@ungap/template-literal": "^0.5.0"
+    "@ungap/template-literal": "^0.6.0"
   },
   "type": "module",
   "exports": {
